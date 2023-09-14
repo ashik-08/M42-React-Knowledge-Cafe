@@ -9,14 +9,20 @@ function App() {
   const [readingTime, setReadingTime] = useState(0);
 
   const handleAddBookmark = (blog) => {
-    const newBookmarks = [...bookmarks, blog];
-    setBookmarks(newBookmarks);
+    
+    const isExist = bookmarks.find((item) => item.id === blog.id);
+    if (isExist) {
+      return alert('Already Bookmarked!!!');
+    } else {
+      const newBookmarks = [...bookmarks, blog];
+      setBookmarks(newBookmarks);
+    }
   }
 
   const handleMarkAsRead = (id, time) => {
     setReadingTime(readingTime + time);
     // remove the read blog from bookmark
-    const remainingBookmarks = bookmarks.filter(bookmark => bookmark.id !== id);
+    const remainingBookmarks = bookmarks.filter((bookmark) => bookmark.id !== id);
     setBookmarks(remainingBookmarks);
   }
 

@@ -5,8 +5,8 @@ const Blog = ({ blog, handleAddBookmark, handleMarkAsRead }) => {
   const { id, cover, author, author_img, posted_date, reading_time, title, hashtags } = blog;
 
   return (
-    <div className="mt-10 border-b-2">
-      <img className="w-full rounded-lg" src={cover} alt="cover-image" />
+    <div className={id !== 4 && "border-b-2"}>
+      <img className="mt-12 w-full rounded-lg" src={cover} alt="cover-image" />
       <div className="flex justify-between items-center mt-8">
         <div className="flex items-center gap-6">
           <img className="w-14" src={author_img} alt="author-image" />

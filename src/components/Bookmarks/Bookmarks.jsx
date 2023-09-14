@@ -3,7 +3,7 @@ import Bookmark from "../Bookmark/Bookmark";
 
 const Bookmarks = ({ bookmarks, readingTime }) => {
   return (
-    <section className="md:w-1/3 mt-10">
+    <section className="md:w-1/3 mt-12">
       <div className="bg-[#6047ec1a] rounded-lg text-center py-5">
         <h2 className="text-[#6047EC] text-xl font-bold">
           Spent time on read : {readingTime}
