@@ -3,6 +3,8 @@ import "./App.css";
 import Blogs from "./components/Blogs/Blogs";
 import Bookmarks from "./components/Bookmarks/Bookmarks";
 import Header from "./components/Header/Header";
+import Swal from "sweetalert2";
+import 'animate.css';
 
 function App() {
   const [bookmarks, setBookmarks] = useState([]);
@@ -12,7 +14,17 @@ function App() {
     
     const isExist = bookmarks.find((item) => item.id === blog.id);
     if (isExist) {
-      return alert('Already Bookmarked!!!');
+      // return alert('Already Bookmarked!!!');
+      Swal.fire({
+        icon: 'warning',
+        title: 'Already Bookmarked !!!',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        }
+      })
     } else {
       const newBookmarks = [...bookmarks, blog];
       setBookmarks(newBookmarks);
